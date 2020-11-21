@@ -1,18 +1,16 @@
-<h1>New dose</h1>
-
 <h1 class="text-center">Create new dose</h1>
 
 
-<div class="text-center">
-  <div class="row">
-    <div class="col-4">
+<div class="container mx-auto">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
+       <%= f.association :ingredient, include_hidden: false %>
         <%= f.input :description %>
-        <%= f.submit class: "btn btn-secondary" %>
+        <%= f.submit class: "btn btn-success" %>
       <% end %>
-    </div>
-  </div>
 </div>
 <br>
 <br>
 
+<div class="d-flex justify-content-end">
+<li><%= link_to "Return to #{@cocktail.name}", cocktail_path(@cocktail), class: "btn btn-primary" %></li>
+</div>

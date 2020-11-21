@@ -1,44 +1,17 @@
 <h1 class="text-center">Create new cocktail</h1>
 
 
-<div class="text-center">
-  <div class="row">
-    <div class="col-4">
+<div class="container mx-auto">
       <%= simple_form_for(@cocktail) do |f| %>
         <%= f.input :name %>
-        <%= f.submit class: "btn btn-secondary" %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit class: "btn btn-success" %>
       <% end %>
-    </div>
-  </div>
 </div>
 <br>
 <br>
 
 
-
-
-<!--   create_table "cocktails", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "doses", force: :cascade do |t|
-    t.text "description"
-    t.bigint "cocktail_id", null: false
-    t.bigint "ingredient_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["cocktail_id"], name: "index_doses_on_cocktail_id"
-    t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
-  end
-
-  create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-
-
-
- -->
-<%= link_to "Back Home", cocktails_path %>
+<div class="d-flex justify-content-end">
+<li><%= link_to "Back Home", cocktails_path, class: "btn btn-primary" %></li>
+</div>
